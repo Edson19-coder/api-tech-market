@@ -5,7 +5,7 @@ require("dotenv").config();
 
 //Conexion DB
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.env_db || "mongodb://localhost:27017/tech-market-db").then(()=>{
+mongoose.connect(process.env.DB_URI  || "mongodb://localhost:27017/tech-market-db").then(()=>{
 		console.log("La conexion a la base de datos de Tech Market, se ha realizado correcatamente.");
 		//Crear servidor
 		app.listen(port, ()=>{
