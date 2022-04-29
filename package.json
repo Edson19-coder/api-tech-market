@@ -1,0 +1,26 @@
+{
+  "name": "tech-market",
+  "version": "1.0.0",
+  "description": "Backend del proyecto de Tech Market",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Tech Market Team",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.2",
+    "connect-multiparty": "^2.2.0",
+    "express": "^4.17.3",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.29.1",
+    "mongoose": "^6.2.3",
+    "mongoose-pagination": "^1.0.0"
+  }
+}

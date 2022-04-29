@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "b965df06-861e-4310-9faa-34fd512cf034",
+		"name": "PPP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registrar usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Edson\",\r\n    \"surname\": \"Lugo\",\r\n    \"email\": \"edson@gmail.com\",\r\n    \"password\": \"edsonpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/addUser",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"addUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"edson@gmail.com\",\r\n    \"password\": \"edsonpassword\",\r\n    \"gettoken\" = true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/authUser",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"authUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear producto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjE0NWRjMjQ1NWFmYTYyNmJhZGE3ZmYiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyIsImVtYWlsIjoiZWRzb25AZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImltYWdlIjoiZGVmYXVsdC5qcGciLCJpYXQiOjE2NDgwMjQyNjQsImV4cCI6MTY1MDYxMjY2NH0.Bs4-ujRVmJuiq4RIuvLzmUnMwoHRtDxguLfgBH-8eQ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"TestName\",\r\n    \"description\": \"Testdescription\",\r\n    \"price\": 1000,\r\n    \"characteristics\": \"{\\\"manufacturer\\\":\\\"manufacturerTes\\\", \\\"name\\\":\\\"nametest\\\", \\\"description\\\":\\\"descriptiontest\\\", \\\"model\\\":\\\"modeltest\\\", \\\"socket\\\": \\\"sockettest\\\"}\",\r\n    \"category\": \"CPU\",\r\n    \"image\": \"lol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/createProduct",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"createProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjE0NWRjMjQ1NWFmYTYyNmJhZGE3ZmYiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyIsImVtYWlsIjoiZWRzb25AZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImltYWdlIjoiZGVmYXVsdC5qcGciLCJpYXQiOjE2NDgwMjQyNjQsImV4cCI6MTY1MDYxMjY2NH0.Bs4-ujRVmJuiq4RIuvLzmUnMwoHRtDxguLfgBH-8eQ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"CPU\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/createCategory",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"createCategory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

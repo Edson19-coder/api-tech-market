@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "572a3426-130e-44b7-8d68-82fac1eed2e9",
+		"name": "PPP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registrar usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Edson\",\r\n    \"surname\": \"Lugo\",\r\n    \"email\": \"edson@gmail.com\",\r\n    \"password\": \"edsonpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/createUser",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"edson@gmail.com\",\r\n    \"password\": \"edsonpassword\",\r\n    \"gettoken\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/authUser",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"authUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear producto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjE0NWRjMjQ1NWFmYTYyNmJhZGE3ZmYiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyIsImVtYWlsIjoiZWRzb25AZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImltYWdlIjoiZGVmYXVsdC5qcGciLCJpYXQiOjE2NDgwMjQyNjQsImV4cCI6MTY1MDYxMjY2NH0.Bs4-ujRVmJuiq4RIuvLzmUnMwoHRtDxguLfgBH-8eQ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"TestName\",\r\n    \"description\": \"Testdescription\",\r\n    \"price\": 1000,\r\n    \"characteristics\": \"{\\\"manufacturer\\\":\\\"manufacturerTes\\\", \\\"name\\\":\\\"nametest\\\", \\\"description\\\":\\\"descriptiontest\\\", \\\"model\\\":\\\"modeltest\\\", \\\"socket\\\": \\\"sockettest\\\"}\",\r\n    \"category\": \"CPU\",\r\n    \"image\": \"lol\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/createProduct",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"createProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear metodo de pago",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjYyNTZhNzYzYjg3NDIxMDI5YmEwNGEiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyIsImVtYWlsIjoiZWRzb25AZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImltYWdlIjoiZGVmYXVsdC5qcGciLCJpYXQiOjE2NTA3NDM5NTYsImV4cCI6MTY1MzMzNTk1Nn0.pwXfCj7dNb9ChL5vcEu1RqAXVUkPyVJrSEgCRjcrem0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"method\": \"MASTERCARD\",\r\n    \"cardHolder\": \"ValeriaUwU2\",\r\n    \"cardNumber\": \"81825421825678\",\r\n    \"securityNumber\": \"420\",\r\n    \"expirationMonth\": \"09\",\r\n    \"expirationYear\": \"2024\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/createPaymentMethod",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"createPaymentMethod"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar metodo de pago",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjYyNTZhNzYzYjg3NDIxMDI5YmEwNGEiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyIsImVtYWlsIjoiZWRzb25AZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImltYWdlIjoiZGVmYXVsdC5qcGciLCJpYXQiOjE2NTA3NDcyMzYsImV4cCI6MTY1MzMzOTIzNn0.xMBZoqlKOnh7rLIKqP5opbM3h_tDAgcE4tDoTeQAsK4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardHolder\": \"PainChip\",\r\n    \"securityNumber\": \"117\",\r\n    \"expirationMonth\": \"12\",\r\n    \"expirationYear\": \"2026\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/updatePaymentMethod/62645aa0fb1e5505a1716433",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"updatePaymentMethod",
+						"62645aa0fb1e5505a1716433"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjE0NWRjMjQ1NWFmYTYyNmJhZGE3ZmYiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyIsImVtYWlsIjoiZWRzb25AZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImltYWdlIjoiZGVmYXVsdC5qcGciLCJpYXQiOjE2NDgwMjQyNjQsImV4cCI6MTY1MDYxMjY2NH0.Bs4-ujRVmJuiq4RIuvLzmUnMwoHRtDxguLfgBH-8eQ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"CPU\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/createCategory",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"createCategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add To Cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjYyNTZhNzYzYjg3NDIxMDI5YmEwNGEiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyIsImVtYWlsIjoiZWRzb25AZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImltYWdlIjoiZGVmYXVsdC5qcGciLCJpYXQiOjE2NTA2MTkwOTAsImV4cCI6MTY1MzIxMTA5MH0.VjZJmAah-Ik_Zv2SoUAy4HjllPW8fCcAH1racmdKALc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"6262572963b87421029ba069\",\r\n    \"cantidad\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/addToCart",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"addToCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cart",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjYyNTZhNzYzYjg3NDIxMDI5YmEwNGEiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyIsImVtYWlsIjoiZWRzb25AZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImltYWdlIjoiZGVmYXVsdC5qcGciLCJpYXQiOjE2NTA2MTM3NjUsImV4cCI6MTY1MzIwNTc2NX0.ILqIqdHfM2z6P5iUnVRxbxt9GVGuVkW_1lko2NBoOk4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/GetCart",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"GetCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Total Carts Active",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjYyNTZhNzYzYjg3NDIxMDI5YmEwNGEiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyIsImVtYWlsIjoiZWRzb25AZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImltYWdlIjoiZGVmYXVsdC5qcGciLCJpYXQiOjE2NTA2MTM3NjUsImV4cCI6MTY1MzIwNTc2NX0.ILqIqdHfM2z6P5iUnVRxbxt9GVGuVkW_1lko2NBoOk4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/getTotalCartsActive",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getTotalCartsActive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Payment Method By UserId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjYyNTZhNzYzYjg3NDIxMDI5YmEwNGEiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyIsImVtYWlsIjoiZWRzb25AZ21haWwuY29tIiwicm9sZSI6IkNMSUVOVCIsImltYWdlIjoiZGVmYXVsdC5qcGciLCJpYXQiOjE2NTA3NDM5NTYsImV4cCI6MTY1MzMzNTk1Nn0.pwXfCj7dNb9ChL5vcEu1RqAXVUkPyVJrSEgCRjcrem0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/getPaymentMethodByUserId",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getPaymentMethodByUserId"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Cart",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTNjMzE4MWJjMmU1ODhlZmU0ODZhNGYiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyBTYW5jaGV6IiwibmljayI6IkVkc29uMTkiLCJlbWFpbCI6ImVkc29uanVhbjE5QGdtYWlsLmNvbSIsInJvbGUiOiJDTElFTlQiLCJpbWFnZSI6bnVsbCwiaWF0IjoxNjMxMzM1OTY0LCJleHAiOjE2MzM5Mjc5NjR9.SLpsTNKJrfSooi4cp1hexQNAncKgqBmjPLGbcNp2t4M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/deleteCartById",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"deleteCartById"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Item By UserId And ProductId",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTNjMzE4MWJjMmU1ODhlZmU0ODZhNGYiLCJuYW1lIjoiRWRzb24iLCJzdXJuYW1lIjoiTHVnbyBTYW5jaGV6IiwibmljayI6IkVkc29uMTkiLCJlbWFpbCI6ImVkc29uanVhbjE5QGdtYWlsLmNvbSIsInJvbGUiOiJDTElFTlQiLCJpbWFnZSI6bnVsbCwiaWF0IjoxNjMxMzM1OTY0LCJleHAiOjE2MzM5Mjc5NjR9.SLpsTNKJrfSooi4cp1hexQNAncKgqBmjPLGbcNp2t4M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/deleteItemByUserIdAndProductId/6140eabc8a889ba2437453bc",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"deleteItemByUserIdAndProductId",
+						"6140eabc8a889ba2437453bc"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
