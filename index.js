@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var app = require('./app');
 var port = 5000;
-require("dotenv").config();
 
 //Conexion DB
 mongoose.Promise = global.Promise;
