@@ -4,7 +4,7 @@ var port = 5000;
 
 //Conexion DB
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://admin:FMybogV2nHr8d0wr@cluster0.s4hym.mongodb.net/Cluster0?retryWrites=true&w=majority').then(()=>{
+mongoose.connect('mongodb+srv://admin:<password>@tech-market.s4hym.mongodb.net/tech-market-db?retryWrites=true&w=majority').then(()=>{
 		console.log("La conexion a la base de datos de Tech Market, se ha realizado correcatamente.");
 		//Crear servidor
 		app.listen(port, ()=>{
